@@ -25,7 +25,7 @@ export default function SelectHabits({ text }: Props) {
     }
 
     function toggleExpand() {
-        setExpand(!expand);
+        setExpand(!expand)
         Animated.timing(animatedHeight, {
             toValue: expand ? scale(250) : scale(380), 
             duration: 300, 
@@ -102,7 +102,7 @@ export default function SelectHabits({ text }: Props) {
 const styles = ScaledSheet.create({
 
   text1:{
-    paddingTop:'40@s',
+    paddingTop:'40@vs',
     width:'90%',
     fontSize: '27@s',
   },
@@ -132,4 +132,4 @@ const styles = ScaledSheet.create({
     marginTop:'30@s',
     marginBottom:'40@s'
   }
-});
+})

@@ -1,6 +1,8 @@
 import {  SafeAreaView} from "react-native";
+import Introdution1 from "../components/introdution1";
 import Select from "../components/select"
 import SelectHabits from "../components/selectHabits"
+import SelectAge from "../components/selectAge";
 import { useState } from "react";
 export default function Selection(){
 
@@ -17,12 +19,14 @@ export default function Selection(){
         img={require('../assets/images/run.png')}
         />
     ),
-    () => <SelectHabits text="Select 3 good habits you want to improve"/>
+    () => <SelectHabits text="Select 3 good habits you want to improve"/>,
+    ()=> <SelectAge/>,
+    ()=> <Introdution1/>
     ]
     
     return(
         <SafeAreaView className="flex-1 bg-[#1A1A1A] w-full justify-center items-center">
-        {SelectionParts[1]()}
+            {SelectionParts[3]()}
         </SafeAreaView>
     )
 }

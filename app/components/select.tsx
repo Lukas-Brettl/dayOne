@@ -86,14 +86,14 @@ const styles = ScaledSheet.create({
             fontSize:'16@s'
         },
         view2:{
-            paddingTop:'80@s',
+            paddingTop:'80@vs',
             paddingInline:'55@s'
         },
         view3:{
             width:'140@s'
         },
         view4:{
-            paddingTop: '30@s'
+            paddingTop: '40@vs'
         },
         view5:{
             gap:'40@s',   
