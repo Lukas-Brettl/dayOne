@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Pressable, Text, TouchableWithoutFeedback, Animated } from 'react-native'
 import { scale } from 'react-native-size-matters'
 import * as Haptics from 'expo-haptics';
+import { View } from 'react-native-animatable';
 
 
 
@@ -75,7 +76,7 @@ useEffect(() => {
       endDisplay && console.log('s')
       
     }}>
-        <Animated.Text className='text-center' style={{ 
+        <Animated.Text className='text-center bg-blue-300' style={{ 
             fontSize: scale(29), 
             fontWeight: 'bold',
             opacity: endTyping ? fadeAnim : 1,
@@ -86,9 +87,11 @@ useEffect(() => {
             backgroundColor: endTyping? 'white': 'transparent', }}>
         {displayedText}
         {endTyping? null: 
-          <Text>
-              {isTypingDone ? (cursorVisible ? '|' : ' ') : '|'}
-          </Text>
+          <View className='self-end  justify-end w-2 h-12 translate-y-1'>
+            <Text className='text-white font-bold' style={{fontSize: scale(29)}}>
+                {isTypingDone ? (cursorVisible ? '|' : ' ') : '|'}
+            </Text>
+          </View>
         }
         </Animated.Text>
     </Pressable>
