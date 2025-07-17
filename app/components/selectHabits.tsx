@@ -2,6 +2,7 @@ import { SafeAreaView, TouchableOpacity, View, Text, ScrollView, TouchableWithou
 import { ScaledSheet,scale  } from 'react-native-size-matters';
 import { Animated } from 'react-native';
 import MyButton from "../components/button";
+import Save from "./saveToStorage";
 import { useState, useRef } from "react";
 
 interface Props {
@@ -37,7 +38,7 @@ export default function SelectHabits({ text }: Props) {
   const habits = [
     'running', 'exersise', 'quality sleep', 'screen time', 'reading books',
     'cold showers', 'drinking water', "learning", 'custom hobby',
-    'meditation', 'journaling', 'cleaning room', 'walking', 'edu'
+    'meditation', 'journaling', 'cleaning room', 'walking', 'edu (neco jako pustit si podcast nebo neco)', 'chess', 'bussines', 'programming', 'new language (uceni se ciziho jazyka)'
   ];
 
   return (
@@ -92,7 +93,7 @@ export default function SelectHabits({ text }: Props) {
         </Animated.View>
         <View className="flex-1 justify-end items-center" style={styles.lastView}>
             <Text className="text-white pb-6" style={styles.text3}>selected {selected.length}/3</Text>
-            <MyButton text="submit" width={270} disabled={selected.length <3} />
+            <MyButton text="submit" width={270} disabled={selected.length <3} fun={() => Save({items: selected})}/>
         </View>                
 
     </View>

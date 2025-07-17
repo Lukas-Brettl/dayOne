@@ -15,8 +15,8 @@ export default function Introdution2(){
              {step === 0 && (
                 <TypeWriter
                 text={"I'll show you something"}
-                speed={110}
-                delayAfterEnd={3000}
+                speed={80}
+                delayAfterEnd={2300}
                 onTypingEnd={() => setStep(1)}
                 />
             )}
@@ -26,16 +26,16 @@ export default function Introdution2(){
                         {secondStep === 0 && (
                             <TypeWriter
                             text={"This is your life in squares"}
-                            speed={110}
-                            delayAfterEnd={3000}
+                            speed={80}
+                            delayAfterEnd={2300}
                             onTypingEnd={() => setSecondStep(1)}
                             />
                         )}
                         {secondStep === 1 && (
                             <TypeWriter
                             text={"Each square represent 1 month"}
-                            speed={110}
-                            delayAfterEnd={3000}
+                            speed={80}
+                            delayAfterEnd={2300}
                             onTypingEnd={() => setSecondStep(2)}
                             />
                         )}
@@ -43,9 +43,35 @@ export default function Introdution2(){
                         {secondStep === 2 && (
                             <TypeWriter
                             text={"The white ones is time what you lived "}
-                            speed={110}
-                            delayAfterEnd={3000}
-                            onTypingEnd={() => setSecondStep(2)}
+                            speed={80}
+                            delayAfterEnd={2300}
+                            onTypingEnd={() => setSecondStep(3)}
+                            />
+                        )}
+
+                        {secondStep === 3 && (
+                            <TypeWriter
+                            text={"The others are what you could live"}
+                            speed={80}
+                            delayAfterEnd={2300}
+                            onTypingEnd={() => setSecondStep(4)}
+                            />
+                        )}
+                        
+                        {secondStep === 4 && (
+                            <TypeWriter
+                            text={"You still have time to change"}
+                            speed={80}
+                            delayAfterEnd={2300}
+                            onTypingEnd={() => setSecondStep(5)}
+                            />
+                        )}
+                        {secondStep === 5 && (
+                            <TypeWriter
+                            text={"But time is ticking"}
+                            speed={80}
+                            delayAfterEnd={2300}
+                            onTypingEnd={() => setSecondStep(5)}
                             />
                         )}
 

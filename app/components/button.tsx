@@ -6,13 +6,15 @@ interface Props {
   fs?: number,
   width?: number,
   height?: number,
-  disabled?:boolean
+  disabled?:boolean,
+  fun?:any
 }
 
-export default function Button({ text, fs = 16, width = 150, height = 45, disabled = false }: Props) {
+export default function Button({ text, fs = 16, width = 150, height = 45, disabled = false, fun }: Props) {
   return (
     <TouchableOpacity className="justify-center items-center rounded-xl bg-white"
         disabled={disabled}
+        onPress={fun}
         style={{
             width: scale(width),
             height: verticalScale(height),

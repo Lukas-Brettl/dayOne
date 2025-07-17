@@ -3,7 +3,7 @@ import Introdution1 from "../components/introdution1";
 import Select from "../components/select"
 import SelectHabits from "../components/selectHabits"
 import SelectAge from "../components/selectAge";
-import Squares from "../components/squares";
+import Questions from "../components/questions";
 import { useState } from "react";
 import Introdution2 from "../components/introdution2";
 export default function Selection(){
@@ -11,20 +11,21 @@ export default function Selection(){
     const [partNum, setPartNum] = useState(1)
 
     const SelectionParts = [
+    ()=> <Introdution1/>,
+    ()=> <SelectAge/>,
+    ()=> <Introdution2/>,
     () => (
         <Select
         min={{ num: 0, message: "I don't run" }}
-        max={{ num: 8, message: "8 km or more" }}
+        max={{ num: 8, message: '8 km or more' }}
         step={2}
-        text="How many kilometers do you run per week?"
+        text='How many kilometers do you run per week?'
        
         img={require('../assets/images/run.png')}
         />
     ),
-    () => <SelectHabits text="Select 3 good habits you want to improve"/>,
-    ()=> <SelectAge/>,
-    ()=> <Introdution1/>,
-    ()=> <Introdution2/>
+    () => <SelectHabits text='Select 3 good habits you want to improve'/>,    
+    ()=> <Questions caption='How much time do you spend on social networks?' answers={['10min/day', '30min/day', '1h/day', '2h or more']}/>
     ]
     
     return(
