@@ -2,7 +2,7 @@ import { Text, SafeAreaView, View, Image, Button, TouchableOpacity} from "react-
 import { ImageSourcePropType } from "react-native";
 import { scale, ScaledSheet, verticalScale} from 'react-native-size-matters';
 import Slider from '@react-native-community/slider'
-import MyButton from "../components/button"
+import MyButton from "../button"
 import * as Haptics from 'expo-haptics';
 import { Link } from 'expo-router';
 import { useState } from "react";

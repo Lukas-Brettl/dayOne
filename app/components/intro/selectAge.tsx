@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { ScaledSheet} from 'react-native-size-matters';
 import { Text, TouchableOpacity, View } from "react-native";
-import MyButton from '../components/button'
+import MyButton from '../button'
 
 
 export default function SelectAge(){

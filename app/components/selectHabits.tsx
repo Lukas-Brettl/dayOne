@@ -2,7 +2,7 @@ import { SafeAreaView, TouchableOpacity, View, Text, ScrollView, TouchableWithou
 import { ScaledSheet,scale  } from 'react-native-size-matters';
 import { Animated } from 'react-native';
 import MyButton from "../components/button";
-import Save from "./saveToStorage";
+import Save from "./storage/saveToStorage";
 import { useState, useRef } from "react";
 
 interface Props {

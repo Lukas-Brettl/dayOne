@@ -1,7 +1,7 @@
-import { View,Text } from "react-native";
-import TypeWriter from '../components/typeWriter'
-import { useState, useEffect, ReactNode } from 'react';
-import Squares from "./squares";
+import { View} from "react-native";
+import TypeWriter from './typeWriter'
+import { useState} from 'react';
+import Squares from "./squares"
 import * as Animatable from 'react-native-animatable'
 import {scale} from 'react-native-size-matters';
 

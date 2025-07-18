@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import TypeWriter from '../components/typeWriter'
-import MyButton from '../components/button'
+import TypeWriter from './typeWriter'
+import MyButton from '../button'
 import { View, Text } from 'react-native'
 import { ScaledSheet, scale} from 'react-native-size-matters';
 

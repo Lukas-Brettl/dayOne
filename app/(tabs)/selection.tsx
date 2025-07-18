@@ -1,11 +1,11 @@
 import {  SafeAreaView} from "react-native";
-import Introdution1 from "../components/introdution1";
-import Select from "../components/select"
+import Introdution1 from "../components/intro/introdution1";
+import Select from "../components/intro/select"
 import SelectHabits from "../components/selectHabits"
-import SelectAge from "../components/selectAge";
-import Questions from "../components/questions";
+import SelectAge from "../components/intro/selectAge";
+import Questions from "../components/intro/questions";
 import { useState } from "react";
-import Introdution2 from "../components/introdution2";
+import Introdution2 from "../components/intro/introdution2";
 export default function Selection(){
 
     const [partNum, setPartNum] = useState(1)

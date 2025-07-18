@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Load from './loadFromStorage';
 
 const habitInfo : { [key: string]: habitInfoType }={
         "running": {
@@ -394,7 +395,10 @@ const habitInfo : { [key: string]: habitInfoType }={
     }
 
 interface props{
-    items:string[]
+    items:string[],
+    what?:string,
+    where:string[]
+    storageKey:string
 }
 
 type habitInfoType = {
@@ -409,29 +413,43 @@ type habitInfoType = {
 //things saving to asyncStorage
 
 
-export default async function Save({items}:props){
+export default async function Save({items, what, where, storageKey}:props){
+
     
-    let data: { [category: string]: { [habitName: string]: habitInfoType } } = {}
+    let data:Record<string,Record<string,habitInfoType>>  = {}
 
-   
+    
+    switch(what){
+        case 'add habits':{
 
-    items.forEach(item => {
-        const  specificHabit = habitInfo[item]
+            items.forEach(item => {
+                const  specificHabit = habitInfo[item]
 
-        if(specificHabit){
-            const {category} = specificHabit
-            if(!data[category]){
-                data[category] = {}
-            }
-            data[category][item] = specificHabit
+                if(specificHabit){
+                    const {category} = specificHabit
+                    if(!data[category]){
+                        data[category] = {}
+                    }
+                    data[category][item] = specificHabit
+                }
+            })
+
         }
-       
-    })
+
+        default:{
+            let loadedData = await Load('habits')
+            
+            
+        }
+
+    }
+
+
 
 
     try {
         const json = JSON.stringify(data);
-        await AsyncStorage.setItem('habits', json);
+        await AsyncStorage.setItem(storageKey, json);
         console.log(data);
     } catch (e) {
         console.error('Saving failed:', e)
