@@ -1,4 +1,4 @@
-import {  SafeAreaView} from "react-native";
+import {View} from "react-native";
 import Introdution1 from "../components/intro/introdution1";
 import Select from "../components/intro/select"
 import SelectHabits from "../components/selectHabits"
@@ -29,8 +29,8 @@ export default function Selection(){
     ]
     
     return(
-        <SafeAreaView className="flex-1 bg-[#1A1A1A] w-full justify-center items-center">
+        <View className="flex-1 bg-[#1A1A1A] w-full justify-center items-center">
             {SelectionParts[4]()}
-        </SafeAreaView>
+        </View>
     )
 }

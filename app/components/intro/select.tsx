@@ -26,7 +26,7 @@ export default function Select({min, max, step, text, img}:Props){
     const [selectedVal, setSelectedVal] = useState(1)
 
     return(
-        <SafeAreaView className="w-full h-full bg-[#1A1A1A]  justify-center items-center">
+        <View className="w-full h-full bg-[#1A1A1A]  justify-center items-center">
             
             <View className="w-full p-5 mt-16 items-start">
                 <Text  className="text-white text-4xl font-medium p-1 italic">
@@ -74,7 +74,7 @@ export default function Select({min, max, step, text, img}:Props){
             </View>
 
             
-        </SafeAreaView>
+        </View>
     )
 
 }

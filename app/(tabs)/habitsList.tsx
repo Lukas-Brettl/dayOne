@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text, View, FlatList, ScrollView } from "react-native";
 import { ScaledSheet} from 'react-native-size-matters';
 import Load from "../components/storage/loadFromStorage";
 import Card from "../components/habitCard"
@@ -66,13 +66,13 @@ export default function HabitsList() {
       <View className=" items-center" style={styles.View1}>
         <Text className="text-white" style={styles.text1}>Habits ({numberOfHabits})</Text>
       </View>
-      
-      <View className="flex-1 w-full text-red-500" style={styles.contentView}>
+    
+      <ScrollView className="flex-1 w-full text-red-500" style={styles.contentView}>
       {
           data?dataProcess(): <Text className="text-white text-3xl">loading</Text>
       
       }
-      </View>
+      </ScrollView>
     </View>
   );
 }

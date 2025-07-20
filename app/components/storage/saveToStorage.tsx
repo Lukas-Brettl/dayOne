@@ -396,8 +396,8 @@ const habitInfo : { [key: string]: habitInfoType }={
 
 interface props{
     items:string[],
-    what?:string,
-    where:string[]
+    what:string,
+    where?:string[]
     storageKey:string
 }
 
@@ -420,8 +420,9 @@ export default async function Save({items, what, where, storageKey}:props){
 
     
     switch(what){
-        case 'add habits':{
+        case 'habits':{
 
+            //save new habits
             items.forEach(item => {
                 const  specificHabit = habitInfo[item]
 
@@ -433,15 +434,22 @@ export default async function Save({items, what, where, storageKey}:props){
                     data[category][item] = specificHabit
                 }
             })
-
+            break
         }
 
-        default:{
+        case 'frequency':{
+            if (!where) return null
             let loadedData = await Load('habits')
-            
-            
+            loadedData[where[0]][where[1]].frequency = items
+            data = loadedData
+            console.log('sdasd')
+            console.log(data[where[0]][where[1]].frequency)
+            break
         }
-
+        default:{
+            console.log('parameter (what) is invalid')
+            break
+        }
     }
 
 

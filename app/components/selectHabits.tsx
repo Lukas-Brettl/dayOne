@@ -93,7 +93,7 @@ export default function SelectHabits({ text }: Props) {
         </Animated.View>
         <View className="flex-1 justify-end items-center" style={styles.lastView}>
             <Text className="text-white pb-6" style={styles.text3}>selected {selected.length}/3</Text>
-            <MyButton text="submit" width={270} disabled={selected.length <3} fun={() => Save({items: selected})}/>
+            <MyButton text="submit" width={270} disabled={selected.length <3} fun={() => Save({items: selected, what:'habits', storageKey:'habits'})}/>
         </View>                
 
     </View>
