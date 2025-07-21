@@ -1,6 +1,6 @@
 import { View, Text, Pressable } from "react-native";
 import { ScaledSheet, scale} from 'react-native-size-matters';
-import Save from "./storage/saveToStorage";
+import Save from "./storage/oldStorage";
 import { useState } from "react";
 
 
@@ -16,7 +16,7 @@ interface props{
     }
 }
 export default function Card({habitName, habitInfo}: props){
-    const [localFrequency, setLocalFrequency] = useState(habitInfo.frequency)
+    const [localFrequency, setLocalFrequency] = useState<string[]>(habitInfo.frequency ?? [])
     const days= ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa' , 'Su']
 
     function display(array: string[][]) {

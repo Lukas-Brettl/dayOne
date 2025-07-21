@@ -2,7 +2,8 @@ import { SafeAreaView, TouchableOpacity, View, Text, ScrollView, TouchableWithou
 import { ScaledSheet,scale  } from 'react-native-size-matters';
 import { Animated } from 'react-native';
 import MyButton from "../components/button";
-import Save from "./storage/saveToStorage";
+import Save from "./storage/oldStorage";
+import SaveToStorage from "./storage/saveToStorage";
 import { useState, useRef } from "react";
 
 interface Props {
@@ -15,6 +16,10 @@ export default function SelectHabits({ text }: Props) {
     const[expand, setExpand] = useState<boolean>(false)
 
     const animatedHeight = useRef(new Animated.Value(scale(250))).current
+
+    const saveHandler = ()=>{
+      SaveToStorage({items: selected, keyName:'habits', newHabit:true })
+    }
 
     function addOrRemoveSelected(val:string):void{
         
@@ -93,7 +98,7 @@ export default function SelectHabits({ text }: Props) {
         </Animated.View>
         <View className="flex-1 justify-end items-center" style={styles.lastView}>
             <Text className="text-white pb-6" style={styles.text3}>selected {selected.length}/3</Text>
-            <MyButton text="submit" width={270} disabled={selected.length <3} fun={() => Save({items: selected, what:'habits', storageKey:'habits'})}/>
+            <MyButton text="submit" width={270} disabled={selected.length <3} fun={() => {saveHandler()}}/>
         </View>                
 
     </View>
