@@ -17,22 +17,22 @@ export  default function Level({lvl, streak, lvlXP}:props){
             </View>
             <View>
                 <View className="w-full items-start justify-center bg-[#434343] rounded-2xl" style={styles.XpProgres}>
-                    <View className="bg-[#3EADF6] rounded-2xl" style={{
+                    <View className="bg-[#0099ff] rounded-2xl" style={{
                     height:scale(10),
                     width: `${(100 * lvlXP[0]) / lvlXP[1]}%`
                     }}></View>
                 </View>
             </View>
             <View>
-                <Text className="text-[#ACACAC]" style={styles.Xp}>{lvlXP[0]}/{lvlXP[1]}XP</Text>
+                <Text className="text-[#ACACAC]" style={styles.Xp}>{lvlXP[0]}/{lvlXP[1]} XP</Text>
             </View>
         </View>
     )
 }
 const styles = ScaledSheet.create({
     mainView:{
-        marginTop:'50@vs',
-        paddingInline: '20@s'
+        paddingBottom:'50@vs',
+
     },
     lvl:{
         fontSize: '27@s',

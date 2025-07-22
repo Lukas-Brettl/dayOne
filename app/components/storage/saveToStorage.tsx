@@ -25,10 +25,10 @@ type habitInfo={
 }
 type allowedKeyNames = 'user' | 'habits' | 'medals' |'schedule'
 type keys = {
-    user: Record<string, Record<string, Record<string, string>>>,
+    user: Record<string, Record<string, Record<string, string | number>>>,
     habits: Record<string, Record<string, habitInfo>>,
     medals:Record<string, Record<string, string>>,
-    schedule:Record<string, Record<string, string>>
+    schedule:Record<string, Record<string, string | number>>
 }
 
 export default async function SaveToStorage<K extends allowedKeyNames>({items, keyName, where, newHabit}:props<K>){
@@ -63,19 +63,21 @@ export default async function SaveToStorage<K extends allowedKeyNames>({items, k
 
         let current: any = data
 
-        const place = where!
+        if (!where) data = items
+        else{
+        
 
         //It goes through each key in the 'where' array
-        for(let i:number = 0; i <place.length -1; i++){
+        for(let i:number = 0; i <where.length -1; i++){
 
-            if(!current[place[i]]){
-                current[place[i]] = {}
+            if(!current[where[i]]){
+                current[where[i]] = {}
             }
-            current = current[place[i]]
+            current = current[where[i]]
 
             i++
         }
-        current[place[place.length - 1]] = items;
+        current[where[where.length - 1]] = items;}
     }
 
     //saving
