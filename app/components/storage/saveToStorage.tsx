@@ -35,7 +35,7 @@ export default async function SaveToStorage<K extends allowedKeyNames>({items, k
     
 
     const loaditems = await Load(keyName)
-    let data: keys[K] = loaditems
+    let data: keys[K] = loaditems?loaditems:{}
 
     if (
         newHabit &&

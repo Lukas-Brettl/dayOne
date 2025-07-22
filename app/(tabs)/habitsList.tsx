@@ -25,21 +25,21 @@ export default function HabitsList() {
   //load data from async storage with loadFromStorage component
   useEffect(() => {
     const fetchData = async () => {
-      const habits = await Load("habits");
-      setData(habits);
-    };
-    fetchData();
-  }, []);
+      const habits = await Load("habits")
+      setData(habits)
+    }
+    fetchData()
+  }, [])
 
   useEffect(() => {
-    if (!data) return;
+    if (!data) return
 
-    let count = 0;
+    let count = 0
     for (const category of Object.values(data)) {
-      count += Object.keys(category).length;
+      count += Object.keys(category).length
     }
-    setNumberOfHabits(count);
-  }, [data]);
+    setNumberOfHabits(count)
+  }, [data])
 
   function dataProcess(){
 
