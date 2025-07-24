@@ -21,11 +21,21 @@ type habitInfo={
     'frequency':string[],
     'lvl':number,
     'lvlXP':number[],
-    'info':string[][]
+    'time'?: string,
+    'info'?:string[][]
 }
+
+type userType={
+    'lvl':number,
+    'streak':number,
+    'lvlXP':number[],
+    'goal':number,
+    'firstLaunch':Date
+}
+
 type allowedKeyNames = 'user' | 'habits' | 'medals' |'schedule'
 type keys = {
-    user: Record<string, Record<string, Record<string, string | number>>>,
+    user: Record<string, Record<string, Record<string, userType>>>,
     habits: Record<string, Record<string, habitInfo>>,
     medals:Record<string, Record<string, string>>,
     schedule:Record<string, Record<string, string | number>>

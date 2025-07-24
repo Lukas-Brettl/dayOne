@@ -1,6 +1,6 @@
 import { View, Text, Pressable } from "react-native";
 import { ScaledSheet, scale} from 'react-native-size-matters';
-import Save from "./storage/oldStorage";
+import Save from "../storage/oldStorage";
 import { useState } from "react";
 
 
@@ -55,7 +55,7 @@ export default function Card({habitName, habitInfo}: props){
         <View className="items-center border-2 rounded-lg border-zinc-300" style={styles.View}>
             <View className="flex-row border-b-2 border-zinc-300 items-center z-10" style={styles.View2}>
                 <Text className="text-white " style={styles.text1}>{habitName}</Text>
-                <View className="flex-row">
+              {/* <View className="flex-row">
                     {
                         days.filter(item => localFrequency.includes(item))
                             .map((item,index, array)=>{
@@ -67,7 +67,7 @@ export default function Card({habitName, habitInfo}: props){
                             }
                         )
                     }
-                    </View>
+                    </View>*/} 
             </View>
             <View  className="w-full h-full absolute bg-red-400 items-start justify-end">
                 <View>

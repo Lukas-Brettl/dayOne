@@ -1,10 +1,9 @@
-import { Text, View, FlatList, ScrollView } from "react-native";
+import { Text, View, ScrollView} from "react-native";
 import { ScaledSheet} from 'react-native-size-matters';
+import DataProcess from "../components/forHabitList/habitsDisplay";
 import Load from "../components/storage/loadFromStorage";
-import Card from "../components/habitCard"
+import HabitMore from "../components/forHabitList/habitMore";
 import { useEffect, useState } from "react";
-
-
 
 type habitInfoType = {
     category:string
@@ -15,12 +14,19 @@ type habitInfoType = {
     info: string[][]
 }
 
+type modalType ={
+  name: string,
+  more:habitInfoType
+}
+
 type dataI = Record<string,Record<string,habitInfoType>>
 
 export default function HabitsList() {
+  const [visible, setVisible] = useState(false)
 
   const [data, setData] = useState<dataI>()
   const [numberOfHabits, setNumberOfHabits] = useState<number>(0)
+  const [modalInfo, setModalInfo] = useState<modalType>()
 
   //load data from async storage with loadFromStorage component
   useEffect(() => {
@@ -31,6 +37,7 @@ export default function HabitsList() {
     fetchData()
   }, [])
 
+  //counts habits
   useEffect(() => {
     if (!data) return
 
@@ -41,55 +48,44 @@ export default function HabitsList() {
     setNumberOfHabits(count)
   }, [data])
 
-  function dataProcess(){
-
-    const content=[]
-    let i =0
-    if (!data) return []
-
-    for (const [category, habitObject] of Object.entries(data)) {
-
-      content.push(<Text className="text-white"  style={styles.text2} key={`${i}_${category}`}>{category} </Text>)
-      
-      for (const [habitName, habitInfo] of Object.entries(habitObject)) {
-
-        content.push(<View className="w-full items-center"  key={`${i}_${habitName}`}><Card habitName={habitName} habitInfo={habitInfo}/></View>)
-        
-      }
-      i++
-    }
-    return content
-  }
-    
+  
   return (
     <View className="flex-1 bg-[#1A1A1A]">
+      {modalInfo && <HabitMore visible={visible} handler={closeModal} name={modalInfo['name']} more={modalInfo['more']}/>}
       <View className=" items-center" style={styles.View1}>
         <Text className="text-white" style={styles.text1}>Habits ({numberOfHabits})</Text>
       </View>
     
       <ScrollView className="flex-1 w-full text-red-500" style={styles.contentView}>
       {
-          data?dataProcess(): <Text className="text-white text-3xl">loading</Text>
+          data?<DataProcess displayModal={displayModal} data={data}/>: <Text className="text-white text-3xl">loading</Text>
       
       }
       </ScrollView>
     </View>
-  );
+  )
+
+  function displayModal(habitName:string, habitInfo:habitInfoType){
+    setModalInfo({'name':habitName, 'more':habitInfo})
+    setVisible(true)
+  }
+
+  function closeModal(){
+    setVisible(false)
+  } 
 }
 const styles = ScaledSheet.create({
 
   text1:{
-    fontSize: '29@s'
-  },
-  text2:{
-    paddingLeft: '15@s',
-    fontSize: '19@s',
+    fontSize: '35@s'
   },
   View1:{
     paddingTop: '80@s'
   },
   contentView:{
-    gap:'15@s'
+    
+    paddingTop:'20@s',
+    paddingLeft:'20@s'
   }
 })
 

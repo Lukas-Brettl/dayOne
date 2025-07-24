@@ -42,8 +42,8 @@ export default function SelectHabits({ text }: Props) {
 
   const habits = [
     'running', 'exersise', 'quality sleep', 'screen time', 'reading books',
-    'cold showers', 'drinking water', "learning", 'custom hobby',
-    'meditation', 'journaling', 'cleaning room', 'walking', 'edu (neco jako pustit si podcast nebo neco)', 'chess', 'bussines', 'programming', 'new language (uceni se ciziho jazyka)'
+    'cold showers', "learning", 'custom hobby',
+    'meditation', 'cleaning room', 'walking', 'edu (neco jako pustit si podcast nebo neco)', 'chess', 'bussines', 'programming', 'new language (uceni se ciziho jazyka)'
   ];
 
   return (

@@ -54,12 +54,12 @@ export default function ToDo({data}:props){
     return(
         <View style={styles.mainView}>
             <View className="flex-row">
-                <TouchableOpacity className="w-1/2 justify-center items-center"
+                <TouchableOpacity className="w-1/2 h-14 justify-end items-center"
                 onPress={()=> setClick(true)}>
                     <Text className="text-center text-white font-medium" style={styles.text}>To-do</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity className="w-1/2 justify-center items-center"
+                <TouchableOpacity className="w-1/2 h-14 justify-end items-center"
                 onPress={()=> setClick(false)}>
                 <Text className="text-center text-white font-medium " style={styles.text}>Missions</Text>
                 </TouchableOpacity>

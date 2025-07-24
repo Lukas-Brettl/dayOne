@@ -5,7 +5,8 @@
         "frequency": ["Mo", "We", "Fr"],
         "lvl": 2,
         "lvlXP": [240,300],
-        "info": [["Distance", "5 km"], ["Duration", "30 min"]]
+        "time": "30min",
+        "info": [["Distance", "5 km"]]
     },
     "exersise": {
         "category": "Energy",
@@ -13,7 +14,8 @@
         "frequency": ["Tu", "Th", "Sa"],
         "lvl": 1,
         "lvlXP": [100, 150],
-        "info": [["Workout Type", "Full Body"], ["Duration", "25 min"]]
+        "time": "30min",
+        "info": [["Workout Type", "Full Body"]]
     },
     "quality sleep": {
         "category": "Energy",
@@ -21,7 +23,8 @@
         "frequency": ["Mo", "Tu", "We", "Th", "Fr"],
         "lvl": 3,
         "lvlXP": [310, 400],
-        "info": [["Sleep Goal", "8 hrs"], ["Bedtime", "22:30"]]
+        "time": "8h",
+        "info": [["Bedtime", "22:30"]]
     },
     "screen time": {
         "category": "Wellness",
@@ -38,16 +41,7 @@
         150,
         200
         ],
-        "info": [
-        [
-            "Limit",
-            "2 hrs"
-        ],
-        [
-            "Actual",
-            "1.5 hrs"
-        ]
-        ]
+        "time": "3h"
     },
     "reading books": {
         "category": "Growth",
@@ -62,11 +56,8 @@
         80,
         150
         ],
+        "time": "3 pages",
         "info": [
-        [
-            "Pages",
-            "20"
-        ],
         [
             "Book",
             "Atomic Habits"
@@ -87,44 +78,6 @@
         "lvlXP": [
         190,
         250
-        ],
-        "info": [
-        [
-            "Duration",
-            "1 min"
-        ],
-        [
-            "Temperature",
-            "15\u00b0C"
-        ]
-        ]
-    },
-    "drinking water": {
-        "category": "Energy",
-        "XP": 10,
-        "frequency": [
-        "Mo",
-        "Tu",
-        "We",
-        "Th",
-        "Fr",
-        "Sa",
-        "Su"
-        ],
-        "lvl": 2,
-        "lvlXP": [
-        120,
-        200
-        ],
-        "info": [
-        [
-            "Target",
-            "2.5 L"
-        ],
-        [
-            "Glasses",
-            "10"
-        ]
         ]
     },
     "learning": {
@@ -140,14 +93,11 @@
         290,
         350
         ],
+        "time": "30min",
         "info": [
         [
             "Topic",
             "History"
-        ],
-        [
-            "Time",
-            "30 min"
         ]
         ]
     },
@@ -163,16 +113,12 @@
         50,
         100
         ],
+        "time": "30min",
         "info": [
         [
             "Activity",
             "Painting"
-        ],
-        [
-            "Time",
-            "1 hr"
-        ]
-        ]
+        ]]
     },
     "meditation": {
         "category": "Wellness",
@@ -187,40 +133,7 @@
         310,
         400
         ],
-        "info": [
-        [
-            "Time",
-            "15 min"
-        ],
-        [
-            "Technique",
-            "Breathing"
-        ]
-        ]
-    },
-    "journaling": {
-        "category": "Wellness",
-        "XP": 12,
-        "frequency": [
-        "Mo",
-        "We",
-        "Fr"
-        ],
-        "lvl": 1,
-        "lvlXP": [
-        70,
-        130
-        ],
-        "info": [
-        [
-            "Duration",
-            "10 min"
-        ],
-        [
-            "Focus",
-            "Gratitude"
-        ]
-        ]
+        "time": "15min"
     },
     "cleaning room": {
         "category": "Lifestyle",
@@ -234,16 +147,7 @@
         180,
         230
         ],
-        "info": [
-        [
-            "Time",
-            "30 min"
-        ],
-        [
-            "Focus Area",
-            "Desk & Floor"
-        ]
-        ]
+        "time": "30min"
     },
     "walking": {
         "category": "Balance",
@@ -260,14 +164,11 @@
         90,
         140
         ],
+        "time": "45min",
         "info": [
         [
             "Steps",
             "6000"
-        ],
-        [
-            "Duration",
-            "45 min"
         ]
         ]
     },
@@ -283,16 +184,7 @@
         160,
         220
         ],
-        "info": [
-        [
-            "Format",
-            "Podcast"
-        ],
-        [
-            "Duration",
-            "25 min"
-        ]
-        ]
+        "time": "30min"
     },
     "chess": {
         "category": "Growth",
@@ -306,16 +198,8 @@
         200,
         270
         ],
-        "info": [
-        [
-            "Game Time",
-            "30 min"
-        ],
-        [
-            "Mode",
-            "Rapid"
-        ]
-        ]
+        "time": "30min"
+        
     },
     "bussines": {
         "category": "Productivity",
@@ -330,16 +214,7 @@
         420,
         500
         ],
-        "info": [
-        [
-            "Focus",
-            "Marketing"
-        ],
-        [
-            "Duration",
-            "1 hr"
-        ]
-        ]
+        "time": "30min"
     },
     "programming": {
         "category": "Productivity",
@@ -354,16 +229,7 @@
         310,
         380
         ],
-        "info": [
-        [
-            "Language",
-            "JavaScript"
-        ],
-        [
-            "Project",
-            "Habit Tracker App"
-        ]
-        ]
+        "time": "1h"
     },
     "new language": {
         "category": "Growth",
@@ -378,15 +244,11 @@
         440,
         600
         ],
+        "time": "30min",
         "info": [
         [
             "Language",
             "Spanish"
-        ],
-        [
-            "Time",
-            "30 min"
-        ]
-        ]
+        ]]
     }
 }

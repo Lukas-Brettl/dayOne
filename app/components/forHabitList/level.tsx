@@ -4,16 +4,14 @@ import { ScaledSheet,scale  } from 'react-native-size-matters';
 
 interface props{
     lvl:number,
-    streak:number,
-    lvlXP:[number,number]
+    lvlXP:number[]
 }
 
-export  default function Level({lvl, streak, lvlXP}:props){
+export  default function Level({lvl, lvlXP}:props){
     return(
-        <View className="w-full gap-1" style={styles.mainView}>
-            <View className="flex-row justify-between items-center" style={styles.View1}>
-                <Text className="font-medium text-white" style={styles.lvl}>Level {lvl}</Text>
-                <View><Text className="text-white" style={styles.streak}>{streak}</Text></View>
+        <View className="w-full gap-2" style={styles.mainView}>
+            <View className="p-2 justify-center items-center bg-[#1c2a33] rounded-xl" style={styles.View1}>
+                <Text className="font-semibold text-[#0099FF]" style={styles.lvl}>LEVEL {lvl}</Text>
             </View>
             <View>
                 <View className="w-full items-start justify-center bg-[#434343] rounded-2xl" style={styles.XpProgres}>
@@ -24,7 +22,7 @@ export  default function Level({lvl, streak, lvlXP}:props){
                 </View>
             </View>
             <View>
-                <Text className="text-[#ACACAC]" style={styles.Xp}>{lvlXP[0]}/{lvlXP[1]} XP</Text>
+                <Text className="text-[#ACACAC]" style={styles.Xp}>{lvlXP[0]} / {lvlXP[1]} XP</Text>
             </View>
         </View>
     )
@@ -35,7 +33,7 @@ const styles = ScaledSheet.create({
 
     },
     lvl:{
-        fontSize: '27@s',
+        fontSize: '22@s',
     },
     streak: {
         fontSize: '20@s',
@@ -44,7 +42,7 @@ const styles = ScaledSheet.create({
         fontSize: '15@s',
     },
     View1:{
-       
+       width:'101@s'
     },
     XpContainer:{
 

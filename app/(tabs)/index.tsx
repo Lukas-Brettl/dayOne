@@ -14,10 +14,16 @@ export default function Index() {
   useEffect(()=>{
     
     const fetchData = async () => {
-      //SaveToStorage({items:{'Tu':{'Run': {'time':'30min', 'XP':30}}}, keyName:'schedule'})
+      //SaveToStorage({items:{'Th':{'Run': {'time':'30min', 'XP':30}}}, keyName:'schedule'})
       const user = await Load("user")
       const schedule = await Load('schedule')
-      console.log(schedule)
+      
+      //SaveToStorage({items:{'lvl':1, 'streak':1, 'lvlXP': [60, 120], 'goal':60, 'firstLaunch':d}, keyName:'user'})
+
+      !schedule && SaveToStorage({items:{'We':{'Run': {'time':'30min', 'XP':30}}}, keyName:'schedule'})
+
+      
+      console.log(user)
       setUserData(user)
       setScheduleData(schedule)
     }
@@ -30,7 +36,7 @@ export default function Index() {
       {userData &&
       <View>
         <Level lvl={userData['lvl']} streak={userData['streak']} lvlXP={userData['lvlXP']} />
-        <Counter day={userData['day']} goal={userData['goal']}/>
+        <Counter firstLaunch={userData['firstLaunch']} goal={userData['goal']}/>
       </View>
       }
       
@@ -41,6 +47,6 @@ export default function Index() {
 }
 const styles = ScaledSheet.create({
     mainView:{
-        paddingTop:'50@vs',
+        paddingTop:'50@s',
         paddingInline: '20@s'
     },})
