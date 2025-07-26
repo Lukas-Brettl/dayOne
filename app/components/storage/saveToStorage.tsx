@@ -3,10 +3,10 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 import dataHabitsInfo from './dataHabitsInfo.json'
 
 const habits = [
-    'running', 'exersise', 'quality sleep', 'screen time', 'reading books',
-    'cold showers', 'drinking water', "learning", 'custom hobby',
-    'meditation', 'journaling', 'cleaning room', 'walking', 'edu (neco jako pustit si podcast nebo neco)', 'chess', 'bussines', 'programming', 'new language (uceni se ciziho jazyka)'
-  ];
+    'Run', 'Exersise', 'Sleep', 'Screen', 'Read',
+    'Showers', "Learn", 'Custom',
+    'Meditate', 'Clean', 'Walk', 'Edu', 'Chess', 'Business', 'Programming', 'Language'
+]
 
 interface props<K extends allowedKeyNames>{
     items:any,

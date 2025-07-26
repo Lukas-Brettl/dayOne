@@ -3,7 +3,7 @@ import { ScaledSheet } from 'react-native-size-matters';
 
 interface props{
     name:string,
-    time:string,
+    time?:string,
     xp:number
 }
 
@@ -15,7 +15,7 @@ export default function Card({name, time, xp}:props){
             <View className="flex-1 flex-row items-center justify-between" style={styles.View2}>
                 <View>
                     <Text className="text-white" style={styles.text1}>{name}</Text>
-                    <Text className="font-light text-[#ACACAC]" style={styles.time}>{time}</Text>
+                    {time&&<Text className="font-light text-[#ACACAC]" style={styles.time}>{time}</Text>}
                 </View>
                 <Text className="font-bold text-[#0099ff]" style={styles.xp}>{xp} XP</Text>
             </View>

@@ -29,7 +29,7 @@ export  default function Level({lvl, lvlXP}:props){
 }
 const styles = ScaledSheet.create({
     mainView:{
-        paddingBottom:'50@vs',
+        paddingBottom:'30@vs',
 
     },
     lvl:{

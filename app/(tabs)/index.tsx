@@ -14,16 +14,18 @@ export default function Index() {
   useEffect(()=>{
     
     const fetchData = async () => {
-      //SaveToStorage({items:{'Th':{'Run': {'time':'30min', 'XP':30}}}, keyName:'schedule'})
+      //SaveToStorage({items:{}, keyName:'habits'})
       const user = await Load("user")
       const schedule = await Load('schedule')
       
-      //SaveToStorage({items:{'lvl':1, 'streak':1, 'lvlXP': [60, 120], 'goal':60, 'firstLaunch':d}, keyName:'user'})
+
+
+      !user && //SaveToStorage({items:{'lvl':1, 'streak':1, 'lvlXP': [60, 120], 'goal':60, 'firstLaunch':d}, keyName:'user'})
 
       !schedule && SaveToStorage({items:{'We':{'Run': {'time':'30min', 'XP':30}}}, keyName:'schedule'})
 
       
-      console.log(user)
+      
       setUserData(user)
       setScheduleData(schedule)
     }

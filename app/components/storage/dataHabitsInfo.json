@@ -1,254 +1,148 @@
 {
-    "running": {
+    "Run": {
         "category": "Energy",
         "XP": 20,
         "frequency": ["Mo", "We", "Fr"],
         "lvl": 2,
         "lvlXP": [240,300],
         "time": "30min",
+        "icon":"../assets/image/run_icon.png",
         "info": [["Distance", "5 km"]]
     },
-    "exersise": {
+    "Exersise": {
         "category": "Energy",
         "XP": 18,
         "frequency": ["Tu", "Th", "Sa"],
         "lvl": 1,
         "lvlXP": [100, 150],
-        "time": "30min",
-        "info": [["Workout Type", "Full Body"]]
+        "icon":"../assets/image/exersise_icon.png",
+        "time": "30min"
     },
-    "quality sleep": {
+    "Sleep": {
         "category": "Energy",
         "XP": 15,
         "frequency": ["Mo", "Tu", "We", "Th", "Fr"],
         "lvl": 3,
         "lvlXP": [310, 400],
-        "time": "8h",
-        "info": [["Bedtime", "22:30"]]
+        "icon":"../assets/image/sleep_icon.png",
+        "time": "8h"
     },
-    "screen time": {
+    "Screen": {
         "category": "Wellness",
         "XP": 10,
-        "frequency": [
-        "Mo",
-        "Tu",
-        "We",
-        "Th",
-        "Fr"
-        ],
+        "frequency": ["Mo", "Tu", "We", "Th", "Fr"],
         "lvl": 2,
-        "lvlXP": [
-        150,
-        200
-        ],
+        "lvlXP": [150, 200],
+        "icon":"../assets/image/screen_detox_icon.png",
         "time": "3h"
     },
-    "reading books": {
+    "Read": {
         "category": "Growth",
         "XP": 15,
-        "frequency": [
-        "Mo",
-        "Tu",
-        "Fr"
-        ],
+        "frequency": ["Mo", "Tu", "Fr"],
         "lvl": 1,
-        "lvlXP": [
-        80,
-        150
-        ],
+        "lvlXP": [80, 150],
         "time": "3 pages",
-        "info": [
-        [
-            "Book",
-            "Atomic Habits"
-        ]
-        ]
+        "icon":"../assets/image/read_icon.png"
     },
-    "cold showers": {
+    "Showers": {
         "category": "Energy",
         "XP": 12,
-        "frequency": [
-        "Mo",
-        "Tu",
-        "We",
-        "Th",
-        "Fr"
-        ],
+        "frequency": ["Mo", "Tu", "We", "Th", "Fr"],
         "lvl": 2,
-        "lvlXP": [
-        190,
-        250
-        ]
+        "lvlXP": [190, 250],
+        "icon":"../assets/image/cold_shower_icon.png"
     },
-    "learning": {
+    "Learn": {
         "category": "Growth",
         "XP": 17,
-        "frequency": [
-        "Mo",
-        "We",
-        "Fr"
-        ],
+        "frequency": ["Mo", "We", "Fr"],
         "lvl": 3,
-        "lvlXP": [
-        290,
-        350
-        ],
+        "lvlXP": [290, 350],
         "time": "30min",
-        "info": [
-        [
-            "Topic",
-            "History"
-        ]
-        ]
+        "icon":"../assets/image/learning_icon.png"
     },
-    "custom hobby": {
+    "Custom": {
         "category": "Lifestyle", 
         "XP": 14,
-        "frequency": [
-        "Sa",
-        "Su"
-        ],
+        "frequency": ["Sa", "Su"],
         "lvl": 1,
-        "lvlXP": [
-        50,
-        100
-        ],
+        "lvlXP": [50, 100],
         "time": "30min",
-        "info": [
-        [
-            "Activity",
-            "Painting"
-        ]]
+        "icon":"../assets/image/custom_icon.png"
     },
-    "meditation": {
+    "Meditate": {
         "category": "Wellness",
         "XP": 10,
-        "frequency": [
-        "Tu",
-        "Th",
-        "Sa"
-        ],
+        "frequency": ["Tu", "Th", "Sa"],
         "lvl": 3,
-        "lvlXP": [
-        310,
-        400
-        ],
-        "time": "15min"
+        "lvlXP": [310, 400],
+        "time": "15min",
+        "icon":"../assets/image/meditation_icon.png"
     },
-    "cleaning room": {
+    "Clean": {
         "category": "Lifestyle",
         "XP": 13,
-        "frequency": [
-        "Sa",
-        "Su"
-        ],
+        "frequency": ["Sa", "Su"],
         "lvl": 2,
-        "lvlXP": [
-        180,
-        230
-        ],
-        "time": "30min"
+        "lvlXP": [180, 230],
+        "time": "30min",
+        "icon":"../assets/image/clean_icon.png"
     },
-    "walking": {
+    "Walk": {
         "category": "Balance",
         "XP": 10,
-        "frequency": [
-        "Mo",
-        "Tu",
-        "We",
-        "Th",
-        "Fr"
-        ],
+        "frequency": ["Mo", "Tu", "We", "Th", "Fr"],
         "lvl": 1,
-        "lvlXP": [
-        90,
-        140
-        ],
+        "lvlXP": [90, 140],
         "time": "45min",
-        "info": [
-        [
-            "Steps",
-            "6000"
-        ]
-        ]
+        "icon":"../assets/image/walk_icon.png",
+        "info": [["Distance", "4km"]]
     },
-    "edu": {
+    "Edu": {
         "category": "Productivity",
         "XP": 11,
-        "frequency": [
-        "Tu",
-        "Th"
-        ],
+        "frequency": ["Tu", "Th"],
         "lvl": 2,
-        "lvlXP": [
-        160,
-        220
-        ],
-        "time": "30min"
+        "lvlXP": [160, 220],
+        "time": "30min",
+        "icon":"../assets/image/edu_icon.png"
     },
-    "chess": {
+    "Chess": {
         "category": "Growth",
         "XP": 14,
-        "frequency": [
-        "Fr",
-        "Sa"
-        ],
+        "frequency": ["Fr", "Sa"],
         "lvl": 2,
-        "lvlXP": [
-        200,
-        270
-        ],
-        "time": "30min"
+        "lvlXP": [200, 270],
+        "time": "30min",
+        "icon":"../assets/image/chess_icon.png"
         
     },
-    "bussines": {
+    "Business": {
         "category": "Productivity",
         "XP": 20,
-        "frequency": [
-        "Mo",
-        "We",
-        "Fr"
-        ],
+        "frequency": ["Mo", "We", "Fr"],
         "lvl": 4,
-        "lvlXP": [
-        420,
-        500
-        ],
-        "time": "30min"
+        "lvlXP": [420, 500],
+        "time": "30min",
+        "icon":"../assets/image/business_icon.png"
     },
-    "programming": {
+    "Programming": {
         "category": "Productivity",
         "XP": 19,
-        "frequency": [
-        "Tu",
-        "Th",
-        "Sa"
-        ],
+        "frequency": ["Tu", "Th", "Sa"],
         "lvl": 3,
-        "lvlXP": [
-        310,
-        380
-        ],
-        "time": "1h"
+        "lvlXP": [310, 380],
+        "time": "1h",
+        "icon":"../assets/image/programming_icon.png"
     },
-    "new language": {
+    "Language": {
         "category": "Growth",
         "XP": 18,
-        "frequency": [
-        "Mo",
-        "We",
-        "Su"
-        ],
+        "frequency": ["Mo", "We", "Su"],
         "lvl": 4,
-        "lvlXP": [
-        440,
-        600
-        ],
+        "lvlXP": [440, 600],
         "time": "30min",
-        "info": [
-        [
-            "Language",
-            "Spanish"
-        ]]
+        "icon":"../assets/image/new_language_icon.png"
     }
 }

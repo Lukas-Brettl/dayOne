@@ -39,7 +39,6 @@ export default function ToDo({data}:props){
             5:'Fr',
             6:'Sa'
         }
-        if(!data[days[today]]) console.log('asdas')
         if(!data[days[today]]) return null
 
         for(let [key, item] of Object.entries(data[days[today]])){

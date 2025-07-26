@@ -12,7 +12,8 @@ interface props{
         frequency: string[],
         lvl: number,
         lvlXP: number[],
-        info: string[][]
+        time?:string,
+        info?: string[][]
     }
 }
 export default function Card({habitName, habitInfo}: props){
@@ -71,7 +72,7 @@ export default function Card({habitName, habitInfo}: props){
             </View>
             <View  className="w-full h-full absolute bg-red-400 items-start justify-end">
                 <View>
-                    {display(habitInfo.info)}
+                    {habitInfo.info && display(habitInfo.info)}
                     <Text>XP: {habitInfo.XP}</Text>
                    
                     <View className="flex-row gap-2">

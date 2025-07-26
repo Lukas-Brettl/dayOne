@@ -41,10 +41,10 @@ export default function SelectHabits({ text }: Props) {
 
 
   const habits = [
-    'running', 'exersise', 'quality sleep', 'screen time', 'reading books',
-    'cold showers', "learning", 'custom hobby',
-    'meditation', 'cleaning room', 'walking', 'edu (neco jako pustit si podcast nebo neco)', 'chess', 'bussines', 'programming', 'new language (uceni se ciziho jazyka)'
-  ];
+    'Run', 'Exersise', 'Sleep', 'Screen', 'Read',
+    'Showers', "Learn", 'Custom',
+    'Meditate', 'Clean', 'Walk', 'Edu', 'Chess', 'Business', 'Programming', 'Language'
+  ]
 
   return (
     <View className="w-full items-center flex-1">

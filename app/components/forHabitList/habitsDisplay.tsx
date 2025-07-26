@@ -13,7 +13,8 @@ type habitInfoType = {
     frequency: string[],
     lvl: number,
     lvlXP: number[],
-    info: string[][]
+    time?:string,
+    info?: string[][]
 }
 
 type dataI = Record<string,Record<string,habitInfoType>>

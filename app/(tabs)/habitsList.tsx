@@ -11,7 +11,8 @@ type habitInfoType = {
     frequency: string[],
     lvl: number,
     lvlXP: number[],
-    info: string[][]
+    time?:string,
+    info?: string[][]
 }
 
 type modalType ={
