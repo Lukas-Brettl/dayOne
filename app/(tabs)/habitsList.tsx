@@ -4,6 +4,8 @@ import DataProcess from "../components/forHabitList/habitsDisplay";
 import Load from "../components/storage/loadFromStorage";
 import HabitMore from "../components/forHabitList/habitMore";
 import { useEffect, useState } from "react";
+import SaveToStorage from "../components/storage/saveToStorage";
+import Schedule from "../components/storage/saveSchedule";
 
 type habitInfoType = {
     category:string
@@ -36,7 +38,7 @@ export default function HabitsList() {
       setData(habits)
     }
     fetchData()
-  }, [])
+  }, [visible])
 
   //counts habits
   useEffect(() => {
@@ -71,8 +73,15 @@ export default function HabitsList() {
     setVisible(true)
   }
 
-  function closeModal(){
+  async function closeModal(days:string[], category:string, name:string){
     setVisible(false)
+    await SaveToStorage({
+    items: days,
+    where: [category, name, "frequency"],
+    keyName: 'habits'
+  })
+  
+  await Schedule(days, category, name)
   } 
 }
 const styles = ScaledSheet.create({

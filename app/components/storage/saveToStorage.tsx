@@ -84,8 +84,6 @@ export default async function SaveToStorage<K extends allowedKeyNames>({items, k
                 current[where[i]] = {}
             }
             current = current[where[i]]
-
-            i++
         }
         current[where[where.length - 1]] = items;}
     }

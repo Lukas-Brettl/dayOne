@@ -14,7 +14,7 @@ export default function Index() {
   useEffect(()=>{
     
     const fetchData = async () => {
-      //SaveToStorage({items:{}, keyName:'habits'})
+      //SaveToStorage({items:{}, keyName:'schedule'})
       const user = await Load("user")
       const schedule = await Load('schedule')
       

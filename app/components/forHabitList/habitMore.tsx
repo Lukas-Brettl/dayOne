@@ -1,8 +1,9 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState, memo } from "react";
 import { ScaledSheet, scale } from 'react-native-size-matters';
 import { Text, View, ScrollView,  Modal, Pressable, Image, Dimensions } from "react-native";
 import Level from "./level";
 import Save from "../storage/oldStorage";
+import SaveToStorage from "../storage/saveToStorage";
 
 
 interface props{
@@ -21,29 +22,25 @@ interface props{
 }
 
 export default function HabitMore({visible, handler, name, more}:props){
-    const [localFrequency, setLocalFrequency] = useState<string[]>(more.frequency ?? [])
+    const freq = more.frequency
+    const [localFrequency, setLocalFrequency] = useState<string[]>(freq)
     const days= ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa' , 'Su']
 
+    useEffect(() => {
+        setLocalFrequency(more.frequency)
+    }, [more.frequency])
+    
     //updating the frequency -> and color of button (day)
     const toggleDay = async (day: string) => {
+
         if (!localFrequency.includes(day)) {
             const updated = [...localFrequency, day]
             setLocalFrequency(updated)
-            await Save({
-                items: updated,
-                what: 'frequency',
-                where: [more.category, name],
-                storageKey: 'habits'
-            })
+
         } else {
             const updated = localFrequency.filter(d => d !== day)
             setLocalFrequency(updated)
-            await Save({
-                items: updated,
-                what: 'frequency',
-                where: [more.category, name],
-                storageKey: 'habits'
-            })
+      
         }
     }
     return(
@@ -52,11 +49,11 @@ export default function HabitMore({visible, handler, name, more}:props){
         visible={visible}
         animationType="slide"
         transparent={false}
-        onRequestClose={() => handler()}
+        onRequestClose={() => handler(localFrequency, more['category'], name)}
         >
         <View className="flex-1 ">
             <Pressable className="absolute z-10"
-            onPress={()=>handler()} 
+            onPress={()=>handler(localFrequency, more['category'], name)} 
             style={styles.close}>
                 <View className="justify-center items-center rounded-full p-2 aspect-square bg-[#0000006c]"><Text className="text-center text-white text-3xl font-bold">{'<'}</Text></View>
                 
