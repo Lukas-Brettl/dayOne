@@ -75,13 +75,14 @@ export default function HabitsList() {
 
   async function closeModal(days:string[], category:string, name:string){
     setVisible(false)
+    
     await SaveToStorage({
     items: days,
     where: [category, name, "frequency"],
     keyName: 'habits'
   })
   
-  await Schedule(days, category, name)
+    await Schedule(days, category, name)
   } 
 }
 const styles = ScaledSheet.create({

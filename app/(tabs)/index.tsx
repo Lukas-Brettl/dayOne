@@ -32,7 +32,7 @@ export default function Index() {
     fetchData()
 
   },[])
-  
+  console.log("index render")
   return (
     <View className="w-full h-full  bg-[#1A1A1A]" style={styles.mainView}>
       {userData &&

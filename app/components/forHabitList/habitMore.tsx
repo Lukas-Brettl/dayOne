@@ -23,15 +23,16 @@ interface props{
 
 export default function HabitMore({visible, handler, name, more}:props){
     const freq = more.frequency
+    console.log(1, freq)
     const [localFrequency, setLocalFrequency] = useState<string[]>(freq)
     const days= ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa' , 'Su']
-
+    console.log(2,localFrequency)
     useEffect(() => {
         setLocalFrequency(more.frequency)
     }, [more.frequency])
     
     //updating the frequency -> and color of button (day)
-    const toggleDay = async (day: string) => {
+    const toggleDay = (day: string) => {
 
         if (!localFrequency.includes(day)) {
             const updated = [...localFrequency, day]
