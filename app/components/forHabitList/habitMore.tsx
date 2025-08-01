@@ -2,8 +2,9 @@ import { ReactNode, useEffect, useState, memo } from "react";
 import { ScaledSheet, scale } from 'react-native-size-matters';
 import { Text, View, ScrollView,  Modal, Pressable, Image, Dimensions } from "react-native";
 import Level from "./level";
-import Save from "../storage/oldStorage";
-import SaveToStorage from "../storage/saveToStorage";
+import TimeButton from "../notification/timeButton";
+
+import TimePicker from "../notification/timePicker";
 
 
 interface props{
@@ -23,8 +24,8 @@ interface props{
 
 function HabitMore({visible, handler, name, more}:props){
 
-
     const [localFrequency, setLocalFrequency] = useState<string[]>([])
+    const [showPicker, setShowPicker] = useState(false)
 
     useEffect(() => {
     if (JSON.stringify(localFrequency) !== JSON.stringify(more.frequency)) {
@@ -34,10 +35,6 @@ function HabitMore({visible, handler, name, more}:props){
 
 
     const days= ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa' , 'Su']
-
-    useEffect(() => {
-        setLocalFrequency(more.frequency)
-    }, [more.frequency])
 
     console.log("Local frequency:", localFrequency)
     console.log("More.frequency:", more.frequency)
@@ -63,7 +60,7 @@ function HabitMore({visible, handler, name, more}:props){
         transparent={false}
         onRequestClose={() => handler(localFrequency, more['category'], name)}
         >
-        <View className="flex-1 ">
+        <View className="flex-1">
             <Pressable className="absolute z-10"
             onPress={()=>handler(localFrequency, more['category'], name)} 
             style={styles.close}>
@@ -72,10 +69,17 @@ function HabitMore({visible, handler, name, more}:props){
             </Pressable>
 
             {icons[name] && <Image className="absolute w-full" resizeMode="cover" source={icons[name]} style={styles.img}/>}
+
+            
+
         <View className="flex-1 justify-between bg-[#1f1f1f]" style={styles.mainView}>
+            
             <View className="flex-1">
                 <View className="flex-row justify-between items-center">
                     <Text className="font-medium text-white" style={styles.text1}>{name}</Text> 
+                    
+                    <TimeButton habitName={name} category={more['category']}/>
+            
                     <Text className="text-[#0099FF] font-bold" style={styles.xp}>{more.XP} XP</Text>
                 </View>
                 <Text className="text-[#ACACAC]" style={styles.category}>{more.category}</Text>
