@@ -21,15 +21,26 @@ interface props{
     }
 }
 
-export default function HabitMore({visible, handler, name, more}:props){
-    const freq = more.frequency
-    console.log(1, freq)
-    const [localFrequency, setLocalFrequency] = useState<string[]>(freq)
+function HabitMore({visible, handler, name, more}:props){
+
+
+    const [localFrequency, setLocalFrequency] = useState<string[]>([])
+
+    useEffect(() => {
+    if (JSON.stringify(localFrequency) !== JSON.stringify(more.frequency)) {
+        setLocalFrequency(more.frequency)
+    }
+    }, [JSON.stringify(more.frequency)])
+
+
     const days= ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa' , 'Su']
-    console.log(2,localFrequency)
+
     useEffect(() => {
         setLocalFrequency(more.frequency)
     }, [more.frequency])
+
+    console.log("Local frequency:", localFrequency)
+    console.log("More.frequency:", more.frequency)
     
     //updating the frequency -> and color of button (day)
     const toggleDay = (day: string) => {
@@ -120,6 +131,7 @@ export default function HabitMore({visible, handler, name, more}:props){
         return content
     }
 }
+export default memo(HabitMore)
 const icons:Record<string,any>={
     'Run': require("../assets/image/theme/run_theme.jpg"),
     'Exersise': require("../assets/image/theme/exersise_theme.jpg"),

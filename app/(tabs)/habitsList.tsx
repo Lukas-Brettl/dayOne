@@ -31,14 +31,15 @@ export default function HabitsList() {
   const [numberOfHabits, setNumberOfHabits] = useState<number>(0)
   const [modalInfo, setModalInfo] = useState<modalType>()
 
+
   //load data from async storage with loadFromStorage component
+  const loadHabits = async () => {
+    const habits = await Load("habits")
+    setData(habits)
+  }
   useEffect(() => {
-    const fetchData = async () => {
-      const habits = await Load("habits")
-      setData(habits)
-    }
-    fetchData()
-  }, [visible])
+    loadHabits()
+  }, [])
 
   //counts habits
   useEffect(() => {
@@ -77,12 +78,14 @@ export default function HabitsList() {
     setVisible(false)
     
     await SaveToStorage({
-    items: days,
-    where: [category, name, "frequency"],
-    keyName: 'habits'
-  })
+      items: days,
+      where: [category, name, "frequency"],
+      keyName: 'habits'
+    })
   
     await Schedule(days, category, name)
+    await loadHabits()
+    setModalInfo(undefined)
   } 
 }
 const styles = ScaledSheet.create({

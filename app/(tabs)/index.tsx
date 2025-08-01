@@ -5,33 +5,35 @@ import SaveToStorage from "../components/storage/saveToStorage";
 import Level from "../components/forHome/level";
 import Counter from "../components/forHome/dayCounter";
 import ToDo from "../components/forHome/habitsToDo";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useFocusEffect } from "expo-router";
 export default function Index() {
 
   const [userData, setUserData] = useState()
   const [scheduleData, setScheduleData] = useState()
 
-  useEffect(()=>{
+  useFocusEffect(
+    useCallback(() => {
+      loadHabits(); // 👈 tvoje async funkce na načtení
+    }, [])
+  )
+  const loadHabits = () => {
     
     const fetchData = async () => {
       //SaveToStorage({items:{}, keyName:'schedule'})
       const user = await Load("user")
       const schedule = await Load('schedule')
       
-
-
       !user && //SaveToStorage({items:{'lvl':1, 'streak':1, 'lvlXP': [60, 120], 'goal':60, 'firstLaunch':d}, keyName:'user'})
 
       !schedule && SaveToStorage({items:{'We':{'Run': {'time':'30min', 'XP':30}}}, keyName:'schedule'})
-
-      
-      
+      console.log(schedule)
       setUserData(user)
       setScheduleData(schedule)
     }
     fetchData()
 
-  },[])
+  }
   console.log("index render")
   return (
     <View className="w-full h-full  bg-[#1A1A1A]" style={styles.mainView}>

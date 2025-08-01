@@ -92,7 +92,7 @@ export default async function SaveToStorage<K extends allowedKeyNames>({items, k
     try {
         const json = JSON.stringify(data);
         await AsyncStorage.setItem(keyName, json);
-        console.log(loaditems);
+        //console.log(loaditems);
     } catch (e) {
         console.error('Saving failed:', e)
     }
